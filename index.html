@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentDB Dashboard</title>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                Student<span>DB</span>
+            </div>
+
+            <nav class="nav">
+
+                <button class="active" id="dashboardBtn">
+                    Dashboard
+                </button>
+
+                <button id="studentsBtn">
+                    Students
+                </button>
+
+                <button id="addStudentBtn">
+                    Add Student
+                </button>
+
+                <button id="databaseBtn">
+                    Database
+                </button>
+
+                <button id="settingsBtn">
+                    Settings
+                </button>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main">
+
+            <!-- HEADER -->
+
+            <header class="top">
+
+                <div class="title">
+
+                    <h1>
+                        Student Database
+                    </h1>
+
+                    <p>
+                        Manage students using Supabase PostgreSQL
+                    </p>
+
+                </div>
+
+                <div class="status" id="connectionStatus">
+
+                    <span class="dot"></span>
+
+                    Checking connection...
+
+                </div>
+
+            </header>
+
+
+            <!-- STATISTICS -->
+
+            <section class="cards">
+
+                <div class="card">
+
+                    <div class="stat-label">
+                        Total Students
+                    </div>
+
+                    <div class="stat" id="total">
+                        0
+                    </div>
+
+                    <div class="stat-note">
+                        All records
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="stat-label">
+                        Active Students
+                    </div>
+
+                    <div class="stat" id="active">
+                        0
+                    </div>
+
+                    <div class="stat-note">
+                        Currently enrolled
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="stat-label">
+                        Departments
+                    </div>
+
+                    <div class="stat" id="departments">
+                        0
+                    </div>
+
+                    <div class="stat-note">
+                        Unique departments
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STUDENTS -->
+
+            <section class="panel" id="studentsPanel">
+
+                <div class="panel-head">
+
+                    <h2>
+                        Students
+                    </h2>
+
+                    <div class="actions">
+
+                        <input
+                            class="search"
+                            id="search"
+                            placeholder="Search students..."
+                        >
+
+                        <button
+                            class="primary"
+                            id="addStudentMainBtn"
+                        >
+                            + Add Student
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Email</th>
+
+                            <th>Department</th>
+
+                            <th>Year</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tbody">
+
+                    </tbody>
+
+                </table>
+
+
+                <div
+                    class="empty"
+                    id="empty"
+                >
+                    No students found.
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ADD / EDIT MODAL -->
+
+    <div
+        class="overlay"
+        id="overlay"
+    >
+
+        <div class="modal">
+
+            <h2 id="modalTitle">
+                Add Student
+            </h2>
+
+
+            <input
+                type="hidden"
+                id="editId"
+            >
+
+
+            <label>
+                Name
+            </label>
+
+            <input
+                id="name"
+                placeholder="Student name"
+            >
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                id="email"
+                type="email"
+                placeholder="student@example.com"
+            >
+
+
+            <label>
+                Department
+            </label>
+
+            <select id="department">
+
+                <option value="CSE">
+                    CSE
+                </option>
+
+                <option value="ECE">
+                    ECE
+                </option>
+
+                <option value="EEE">
+                    EEE
+                </option>
+
+                <option value="MECH">
+                    MECH
+                </option>
+
+                <option value="CIVIL">
+                    CIVIL
+                </option>
+
+            </select>
+
+
+            <label>
+                Year
+            </label>
+
+            <select id="year">
+
+                <option value="1">
+                    1
+                </option>
+
+                <option value="2">
+                    2
+                </option>
+
+                <option value="3">
+                    3
+                </option>
+
+                <option value="4">
+                    4
+                </option>
+
+            </select>
+
+
+            <label>
+                Status
+            </label>
+
+            <select id="status">
+
+                <option value="Active">
+                    Active
+                </option>
+
+                <option value="Inactive">
+                    Inactive
+                </option>
+
+            </select>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="cancel"
+                    id="cancelBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="primary"
+                    id="saveBtn"
+                >
+                    Save Student
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VITE JAVASCRIPT -->
+
+    <script
+        type="module"
+        src="/src/main.js"
+    ></script>
+
+</body>
+
+</html>
