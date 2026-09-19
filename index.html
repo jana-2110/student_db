@@ -30,10 +30,6 @@
                     Students
                 </button>
 
-                <button id="addStudentBtn">
-                    Add Student
-                </button>
-
                 <button id="databaseBtn">
                     Database
                 </button>
@@ -153,13 +149,6 @@
                             placeholder="Search students..."
                         >
 
-                        <button
-                            class="primary"
-                            id="addStudentMainBtn"
-                        >
-                            + Add Student
-                        </button>
-
                     </div>
 
                 </div>
@@ -183,8 +172,6 @@
 
                             <th>Status</th>
 
-                            <th>Action</th>
-
                         </tr>
 
                     </thead>
@@ -207,141 +194,6 @@
             </section>
 
         </main>
-
-    </div>
-
-
-    <!-- ADD / EDIT MODAL -->
-
-    <div
-        class="overlay"
-        id="overlay"
-    >
-
-        <div class="modal">
-
-            <h2 id="modalTitle">
-                Add Student
-            </h2>
-
-
-            <input
-                type="hidden"
-                id="editId"
-            >
-
-
-            <label>
-                Name
-            </label>
-
-            <input
-                id="name"
-                placeholder="Student name"
-            >
-
-
-            <label>
-                Email
-            </label>
-
-            <input
-                id="email"
-                type="email"
-                placeholder="student@example.com"
-            >
-
-
-            <label>
-                Department
-            </label>
-
-            <select id="department">
-
-                <option value="CSE">
-                    CSE
-                </option>
-
-                <option value="ECE">
-                    ECE
-                </option>
-
-                <option value="EEE">
-                    EEE
-                </option>
-
-                <option value="MECH">
-                    MECH
-                </option>
-
-                <option value="CIVIL">
-                    CIVIL
-                </option>
-
-            </select>
-
-
-            <label>
-                Year
-            </label>
-
-            <select id="year">
-
-                <option value="1">
-                    1
-                </option>
-
-                <option value="2">
-                    2
-                </option>
-
-                <option value="3">
-                    3
-                </option>
-
-                <option value="4">
-                    4
-                </option>
-
-            </select>
-
-
-            <label>
-                Status
-            </label>
-
-            <select id="status">
-
-                <option value="Active">
-                    Active
-                </option>
-
-                <option value="Inactive">
-                    Inactive
-                </option>
-
-            </select>
-
-
-            <div class="modal-actions">
-
-                <button
-                    class="cancel"
-                    id="cancelBtn"
-                >
-                    Cancel
-                </button>
-
-                <button
-                    class="primary"
-                    id="saveBtn"
-                >
-                    Save Student
-                </button>
-
-            </div>
-
-        </div>
 
     </div>
 
